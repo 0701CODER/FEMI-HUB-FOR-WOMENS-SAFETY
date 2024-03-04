@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FEMI HUB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  </head>
+  <body class="goto-here">
+    <style>
+    .card-header
+  {
+  background:#82ae46 !important;
+  }
+  .sidebar
+  {
+  height:900px !important;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link:hover
+  {
+  color:#FFF;
+ }
+ .help-line a:hover
+ {
+ background-color:#000 !important;
+}
+p
+{
+text-align:justify;
+}
+  </style>
+		<div class="catagories-side-menu">
+        <!-- Close Icon -->
+        <div id="sideMenuClose">
+            <i class="ti-close"></i>
+        </div>
+        <!--  Side Nav  -->
+        <div class="nav-side-menu">
+            <div class="menu-list">
+                <h6>Categories</h6>
+                <ul id="menu-content" class="menu-content collapse out">
+                    <!-- Single Item -->
+                    <li data-toggle="collapse" data-target="#women" class="collapsed active" id="yogi">
+                        
+                    </li>
+                  
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="wrapper">
+
+        <!-- ****** Header Area Start ****** -->
+        <header class="header_area" style="background: #ff084e;">
+            <!-- Top Header Area Start -->
+         
+
+            <!-- Top Header Area End -->
+            <div class="main_header_area">
+                <div class="container h-100">
+                    <div class="row h-100">
+                        <div class="col-12 d-md-flex justify-content-between">
+                            <!-- Header Social Area -->
+                          <div class="top_logo" style="margin-left:50px;">
+                                   <a style=" font-size:20px;font-weight:bold;color: aquamarine;" href="{% url 'home' %}" >FEMI HUB</a>
+                                </div>
+                            <!-- Menu Area -->
+                            <div class="main-menu-area">
+                                <nav class="navbar navbar-expand-lg align-items-start">
+
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#karl-navbar" aria-controls="karl-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="ti-menu"></i></span></button>
+
+                                    <div class="collapse navbar-collapse align-items-start collapse" id="karl-navbar">
+                                        <ul class="navbar-nav animated" id="nav">
+                                            <li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                                           
+                                             <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Register</a></li>
+											  <li class="nav-item"><a href="{% url 'user_login' %}" class="nav-link">Login</a></li>
+											 <li class="nav-item"><a href="/admin/" class="nav-link">Admin</a></li>
+											 <li class="nav-item"><a href="{% url 'all_post' %}" class="nav-link">Posts</a></li>
+											 <li class="nav-item"><a href="{% url 'women_rights' %}" class="nav-link">Women's Right</a></li>
+											 <li class="nav-item"><a href="{% url 'ngo' %}" class="nav-link">NGO No's</a></li>
+	          
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- Help Line -->
+                            <div class="help-line">
+                                <a style="    background-color: aquamarine;" href="tel:+346573556778"><i class="ti-headphone-alt"></i> +34 657 3556 778</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+ <!-- ****** Top Discount Area Start ****** -->
+        
+        <!-- ****** Top Discount Area End ****** -->

@@ -1,0 +1,43 @@
+{%include 'header.html'%}
+<div class="container" style="margin:0 auto;padding-top:100px;">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
+    <div class="card" >
+        <h5 class="card-header">Friends List</h5>
+        <div class="card-body">
+            <div class="table-responsive ">
+                <table class="table table-bordered">
+                    <thead style="background: blue;color: #FFF">
+                        <tr class="white">
+                            <th>Sno</th>
+							<th>Username</th>
+							<th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in row %}
+                        <tr style="background: #FFF;color: #000">
+                            <td>{{forloop.counter}}</td>
+							<td>{{i.0}}</td>
+							
+							<td>
+							
+						
+								<a href="{% url 'profile' pk=i.2 %}" class="btn btn-primary"> View Posts </a>
+							
+							<a href="{% url 'unfollow' pk=i.2 %}" class="btn btn-danger"> UnFollow </a>
+							
+							
+							</td>
+						</tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="8" class="text-center bg-primary">No Friends</td>
+                        </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

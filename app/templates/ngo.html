@@ -1,0 +1,44 @@
+   {% include 'db_head.html' %}
+   
+   {% load static %}
+   
+   
+<div class="col-md-12 heading-section text-center ftco-animate fadeInUp ftco-animated" style="padding:30px 0 0 !important;">
+	
+	<h2 class="mb-4">All NGO Numbers</h2>
+	
+  </div>
+    <section class="ftco-section" style="padding:30px 0 !important;">
+    	<div class="container"  style="background:#DDD;padding:30px;">
+                <div class="table-responsive ">
+                <table class="table table-bordered">
+                    <thead style="background: blue;color: #FFF">
+                        <tr class="white">
+                            <th>Sno</th>
+							<th>Name</th>
+							<th>Number </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in detail %}
+                        <tr style="background: #FFF;color: #000">
+                            <td>{{forloop.counter}}</td>
+							<td>{{i.name}}</td>
+							<td>{{i.number}} </td>
+							
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="8" class="text-center bg-primary">No Numbers</td>
+                        </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </div>
+    </section>
+   
+   
+  
+    
+	  {% include 'footer.html' %}

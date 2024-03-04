@@ -1,0 +1,42 @@
+   {% include 'db_head.html' %}
+   
+   {% load static %}
+   
+   
+<div class="col-md-12 heading-section text-center ftco-animate fadeInUp ftco-animated" style="padding:30px 0 0 !important;">
+	
+	<h2 class="mb-4">All Women's Rights</h2>
+	
+  </div>
+    <section class="ftco-section" style="padding:30px 0 !important;">
+    	<div class="container"  style="background:#DDD;padding:30px;">
+                <div class="row karl-new-arrivals">
+				{% for i in detail %}
+                    <!-- Single gallery Item Start -->
+                    <div class="col-md-6 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.2s">
+                        <!-- Product Image -->
+                        <div class="product-img">
+                           
+							<img src="/media/{{i.image}}" alt="">
+                           
+                        </div>
+                        <!-- Product Description -->
+                        <div class="product-description">
+                            <h4 class="product-price" style="color:#ff084e">{{i.title}} </span></h4>
+                            <p>{{i.description}}</p>
+							
+                        </div>
+						
+				
+							
+				
+                    </div>
+					{% endfor %}
+                </div>
+            </div>
+    </section>
+   
+   
+  
+    
+	  {% include 'footer.html' %}

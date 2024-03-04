@@ -1,0 +1,44 @@
+{%include 'header.html'%}
+<div class="container" style="margin:0 auto;padding-top:100px;">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
+    <div class="card" >
+        <h5 class="card-header">Follow Users</h5>
+        <div class="card-body">
+            <div class="table-responsive ">
+                <table class="table table-bordered">
+                    <thead style="background: blue;color: #FFF">
+                        <tr class="white">
+                            <th>Sno</th>
+							<th>Username</th>
+							<th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in row %}
+                        <tr style="background: #FFF;color: #000">
+                            <td>{{forloop.counter}}</td>
+							<td>{{i.0}}</td>
+							
+							<td>
+							
+							{% if i.1 == 'Follow' %}
+								<a href="{% url 'profile' pk=i.3 %}" class="btn btn-primary">  View Posts </a>
+							{% else %}
+							<a href="{% url 'follow' pk=i.3 %}" class="btn btn-success"> Follow </a>
+							
+							
+							{% endif %}
+							</td>
+						</tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="8" class="text-center bg-primary">No Post</td>
+                        </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

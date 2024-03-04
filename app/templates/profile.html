@@ -1,0 +1,70 @@
+   {% include 'db_head.html' %}
+   
+   {% load static %}
+   
+   
+<div class="col-md-12 heading-section text-center ftco-animate fadeInUp ftco-animated" style="padding:30px 0 0 !important;">
+	{% for i in user %}
+		<h3>UserName : {{i.name}} </h3>
+		<h5>Address</h5>
+		<address>{{i.address }}</address>
+   {% endfor %} <br><br>
+	<h2 class="mb-4">All Posts Posted By {% for i in user %}
+		 {{i.name}} 
+   {% endfor %} </h2>
+	
+	
+  </div>
+    <section class="ftco-section" style="padding:30px 0 !important;">
+    	<div class="container"  style="background:#DDD;padding:30px;">
+                <div class="row karl-new-arrivals">
+				{% for i in detail %}
+                    <!-- Single gallery Item Start -->
+                    <div class="col-md-12 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.2s">
+                        <!-- Product Image -->
+                        <div class="product-img">
+                           
+							<img src="/media/{{i.image}}" alt="">
+                           
+                        </div>
+                        <!-- Product Description -->
+                        <div class="product-description">
+                            <h4 class="product-price" style="color:#ff084e">Posted Date: {{i.date}} <span style="padding-left:30px;text-align:right;">
+							Posted By: {{i.user_id}} </span></h4>
+                            <p>{{i.description}}</p>
+							
+                        </div>
+						
+				
+							<a href="{% url 'like_post' pk=i.id %}"  class="btn btn-secondary btn-xs" >{% for i in row1 %}
+							{{i.0}}
+						  {% endfor %} Like</a>
+				
+				<a href="#" class="btn btn-primary btn-xs"
+  onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+      'facebook-share-dialog', 
+      'width=626,height=436'); 
+    return false;">
+  <i class="fa fa-mail-forward" aria-hidden="true"></i> FB
+</a>	<a class="btn btn-success btn-xs" href="https://web.whatsapp.com//send?text={{i.title}}" data-action="share/whatsapp/share"><i class="fa fa-mail-forward" aria-hidden="true"></i> Whatsapp</a>
+<a href="{% url 'post_comment' pk=i.id %}" class="btn btn-warning btn-xs"> {% for i in row %}
+							{{i.0}}
+						  {% endfor %} <i class="fa fa-comments" aria-hidden="true"></i></a>
+<a href="{% url 'report_post' pk=i.id %}" class="btn btn-danger btn-xs"><i class="fa fa-flag-o" aria-hidden="true"></i>{% for i in row2 %}
+							{{i.0}}
+						  {% endfor %} Report</a>
+						
+					
+				
+                    </div>
+					{% endfor %}
+                </div>
+            </div>
+    </section>
+   
+   
+  
+    
+	  {% include 'footer.html' %}
